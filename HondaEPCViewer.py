@@ -386,7 +386,7 @@ class EPC:
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Honda EPC Viewer v78")
+        self.title("Honda EPC Viewer v0.78 Preview")
         self.geometry('1550x920'); self.minsize(1150,720)
         self.epc=None; self.photo=None; self.orig=None; self.current_conditions=[]; self.current_family_conditions=[]; self._groups=[]; self._blocks=[]; self._vehicle_entries=[]; self.current_dataset=None
         self._build(); self._discover_databases()
