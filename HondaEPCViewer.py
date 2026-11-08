@@ -26,7 +26,11 @@ except Exception as e:
     build_cache = cache_is_current = None
     _CACHE_IMPORT_ERROR = e
 
-APP_DIR = Path(__file__).resolve().parent
+if getattr(sys, 'frozen', False):
+    APP_DIR = Path(sys.executable).resolve().parent   # exeのあるフォルダ
+else:
+    APP_DIR = Path(__file__).resolve().parent
+# APP_DIR = Path(__file__).resolve().parent
 DATA_DIR = APP_DIR / 'Data'
 CACHE_DIR = APP_DIR / 'Cache'
 IMAGE_CACHE = APP_DIR / 'image_cache'
